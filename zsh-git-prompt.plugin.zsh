@@ -88,7 +88,9 @@ git_super_status() {
 		  STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_CLEAN"
 	  fi
 	  STATUS="$STATUS%{${reset_color}%}$ZSH_THEME_GIT_PROMPT_SUFFIX"
-	  echo "$STATUS"
+    if [ "$GIT_BRANCH" != ":" ]; then
+        echo "$STATUS"
+    fi
 	fi
 }
 
